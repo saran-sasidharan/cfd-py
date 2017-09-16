@@ -10,7 +10,8 @@ class Face(object):
     self.area = 0.0
     self.nNodes = len(nodes)
     self.nodes = nodes
-  
+    # Updated later
+    self.cells = [None, None]
     # Initializing functions
     self._set_properties()
     self._update_node()
@@ -71,6 +72,3 @@ def test_face_tri():
   assert np.linalg.norm(f.area_vector - [0.,0.,0.5]) < 1e-10
   assert np.linalg.norm(f.centroid - [2./3.,1./3.,0.]) < 1e-10
   return None
-
-test_face_quad()
-test_face_tri()
